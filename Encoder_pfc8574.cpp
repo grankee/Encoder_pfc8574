@@ -33,7 +33,7 @@ void Encoder::inLoop()
 		uint8_t byte=expander->getByte();
 		//Serial.print((byte & (1<<7))!=0);
 		//Serial.print((lastByte & (1<<7))==0);
-		if(((byte & (1<<pfcPinKnob)) != 0) && ((lastByte & (1<<pfcPinKnob))==0))//knob released
+		if(((byte & (1<<pfcPinKnob)) != 0) && ((lastByte & (1<<pfcPinKnob))==0) && pfcPinKnob>-1)//knob released
 		{
 			cbPress();
 		}		
